@@ -1,0 +1,45 @@
+<div id="app"></div>
+
+<body style="text-align: center" id="body">
+  <h1 style="color: green"></h1>
+  <h3>Select Min/Max dates in an array</h3>
+
+  <p id="GFG_UP" style="font-size: 14px; font-weight: bold"></p>
+
+  <button onclick="GFG_Fun()">click here</button>
+
+  <p id="GFG_DOWN" style="color: green; font-size: 14px; font-weight: bold"></p>
+
+  <script>
+    var el_up = document.getElementById('GFG_UP');
+    var el_down = document.getElementById('GFG_DOWN');
+    
+		var dates = [];
+    dates.push(new Date('2019/06/25'));
+    dates.push(new Date('2022/06/26'));
+    dates.push(new Date('2019/01/01'));
+    dates.push(new Date('2023/06/28'));
+
+
+    el_up.innerHTML =
+      dates[0] + '<br>' + dates[1] + '<br>' + dates[2] + '<br>' + dates[3];
+
+    function GFG_Fun() {
+      var maximumDate = new Date(Math.max.apply(null, dates));
+      var minimumDate = new Date(Math.min.apply(null, dates));
+
+      el_down.innerHTML =
+        'Max date is - ' + maximumDate + '<br>Min date is - ' + minimumDate;
+    }
+
+    const drinks = ['Cola', 'Lemonade', 'Coffee', 'Water'];
+    const filteredDrinks = [];
+    const id = 'Coffee';
+
+    for (let i = 0; i < drinks.length; i++) {
+      if (drinks[i] !== id) {
+        filteredDrinks.push(drinks[i]);
+      }
+    }
+  </script>
+</body>
